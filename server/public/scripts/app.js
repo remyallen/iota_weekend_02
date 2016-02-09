@@ -6,11 +6,17 @@ $(document).ready(function(){
     // Event Listeners
     $('#next-button').on('click', function() {
         currentlySelectedPerson++;
+        if ( currentlySelectedPerson > personArray.length -1 ){
+            currentlySelectedPerson = 0;
+        }
         showPerson();
     });
     // repeat for previous
     $('#prev-button').on('click', function() {
         currentlySelectedPerson--;
+        if ( currentlySelectedPerson < 0 ){
+            currentlySelectedPerson = personArray.length -1;
+        }
         showPerson();
     });
 
